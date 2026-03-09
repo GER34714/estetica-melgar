@@ -49,26 +49,28 @@
       --header-bg: rgba(248,242,239,.24);
       --chip-bg: rgba(255,255,255,.22);
       --card-inner: rgba(255,255,255,.10);
+      --toggle-icon: #4e3959;
     }
 
     body.dark{
-      --surface: rgba(34,26,42,.34);
-      --surface-strong: rgba(40,31,48,.48);
-      --text: #efe7f7;
-      --text-soft: #d0c1de;
-      --title: #ffffff;
-      --accent: #c08ef1;
-      --accent-2: #dcbcff;
-      --accent-3: rgba(190,141,240,.18);
-      --line: rgba(206,174,229,.18);
-      --shadow: 0 18px 45px rgba(0,0,0,.30);
-      --hero-shadow: 0 25px 60px rgba(0,0,0,.34);
-      --glass-border: rgba(255,255,255,.12);
+      --surface: rgba(28,22,36,.68);
+      --surface-strong: rgba(35,27,45,.78);
+      --text: #eadff3;
+      --text-soft: #d0c0de;
+      --title: #f7f0ff;
+      --accent: #c69cf2;
+      --accent-2: #e0c4ff;
+      --accent-3: rgba(198,156,242,.18);
+      --line: rgba(210,180,236,.20);
+      --shadow: 0 18px 45px rgba(0,0,0,.34);
+      --hero-shadow: 0 25px 60px rgba(0,0,0,.40);
+      --glass-border: rgba(255,255,255,.14);
       --button-text: #ffffff;
-      --footer: #130f18;
-      --header-bg: rgba(18,14,24,.28);
-      --chip-bg: rgba(40,31,48,.42);
-      --card-inner: rgba(255,255,255,.04);
+      --footer: #120e17;
+      --header-bg: rgba(16,12,22,.46);
+      --chip-bg: rgba(39,30,50,.78);
+      --card-inner: rgba(255,255,255,.03);
+      --toggle-icon: #f7f0ff;
     }
 
     *{
@@ -101,6 +103,13 @@
         radial-gradient(circle at 84% 20%, rgba(215,176,255,.08), transparent 26%),
         radial-gradient(circle at 50% 85%, rgba(255,255,255,.06), transparent 30%);
       z-index:-1;
+    }
+
+    body.dark::before{
+      background:
+        radial-gradient(circle at 14% 12%, rgba(198,156,242,.08), transparent 28%),
+        radial-gradient(circle at 84% 20%, rgba(140,104,175,.08), transparent 26%),
+        linear-gradient(180deg, rgba(9,7,12,.38) 0%, rgba(14,10,19,.28) 100%);
     }
 
     img{
@@ -284,6 +293,30 @@
       background:linear-gradient(135deg, var(--accent), var(--accent-2)) !important;
       color:var(--button-text) !important;
       border-color:transparent !important;
+    }
+
+    .toggle-theme{
+      width:46px;
+      height:46px;
+      padding:0;
+      display:grid;
+      place-items:center;
+      flex-shrink:0;
+    }
+
+    .toggle-theme svg{
+      width:20px;
+      height:20px;
+      stroke:var(--toggle-icon);
+      fill:none;
+      stroke-width:2;
+      stroke-linecap:round;
+      stroke-linejoin:round;
+      transition:stroke .25s ease, transform .25s ease;
+    }
+
+    .toggle-theme:hover svg{
+      transform:rotate(8deg);
     }
 
     .hero{
@@ -870,6 +903,11 @@
       .hero-brand{
         font-size:2.8rem;
       }
+
+      .toggle-theme{
+        width:44px;
+        height:44px;
+      }
     }
 
     @media (prefers-reduced-motion: reduce){
@@ -902,7 +940,19 @@
         <a href="#sobre-mi">Sobre mí</a>
         <a href="#galeria">Galería</a>
         <a href="#ubicacion">Ubicación</a>
-        <button class="toggle-theme" id="themeToggle" type="button" aria-label="Cambiar tema">Tema</button>
+        <button class="toggle-theme" id="themeToggle" type="button" aria-label="Cambiar tema">
+          <svg id="themeIcon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3V5"></path>
+            <path d="M12 19V21"></path>
+            <path d="M3 12H5"></path>
+            <path d="M19 12H21"></path>
+            <path d="M5.64 5.64L7.05 7.05"></path>
+            <path d="M16.95 16.95L18.36 18.36"></path>
+            <path d="M16.95 7.05L18.36 5.64"></path>
+            <path d="M5.64 18.36L7.05 16.95"></path>
+            <circle cx="12" cy="12" r="4"></circle>
+          </svg>
+        </button>
         <a class="nav-cta" href="https://wa.me/5491126833154?text=Hola%20Estética%20Melgar,%20quisiera%20consultar%20por%20un%20turno.">Pedir turno</a>
       </div>
     </div>
@@ -1159,7 +1209,7 @@
             loading="lazy"
             allowfullscreen
             referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps?q=Carlos%20Octavio%20Bunge%20930,%20El%20Palomar,%20Buenos%Aires&output=embed">
+            src="https://www.google.com/maps?q=Carlos%20Octavio%20Bunge%20930,%20El%20Palomar,%20Buenos%20Aires&output=embed">
           </iframe>
         </div>
       </div>
@@ -1216,15 +1266,37 @@
   <script>
     const body = document.body;
     const themeToggle = document.getElementById("themeToggle");
+    const themeIcon = document.getElementById("themeIcon");
     const savedTheme = localStorage.getItem("melgar-theme");
+
+    function setThemeIcon() {
+      if (body.classList.contains("dark")) {
+        themeIcon.innerHTML = '<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"></path>';
+      } else {
+        themeIcon.innerHTML = `
+          <path d="M12 3V5"></path>
+          <path d="M12 19V21"></path>
+          <path d="M3 12H5"></path>
+          <path d="M19 12H21"></path>
+          <path d="M5.64 5.64L7.05 7.05"></path>
+          <path d="M16.95 16.95L18.36 18.36"></path>
+          <path d="M16.95 7.05L18.36 5.64"></path>
+          <path d="M5.64 18.36L7.05 16.95"></path>
+          <circle cx="12" cy="12" r="4"></circle>
+        `;
+      }
+    }
 
     if (savedTheme === "dark") {
       body.classList.add("dark");
     }
 
+    setThemeIcon();
+
     themeToggle.addEventListener("click", () => {
       body.classList.toggle("dark");
       localStorage.setItem("melgar-theme", body.classList.contains("dark") ? "dark" : "light");
+      setThemeIcon();
     });
 
     const floatingActions = document.getElementById("floatingActions");
