@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Estética Melgar</title>
-  <meta name="description" content="Micropigmentación y restauración en El Palomar. Camuflaje de estrías y cicatrices, limpieza profunda facial y tratamientos corporales con atención personalizada." />
+  <meta name="description" content="Estética Melgar en El Palomar. Dermapen, micropigmentación y restauración, camuflaje de estrías y cicatrices, limpieza profunda facial y atención personalizada." />
 
   <meta property="og:title" content="Estética Melgar" />
-  <meta property="og:description" content="Camuflaje de estrías y cicatrices, limpieza profunda facial y atención personalizada en El Palomar." />
+  <meta property="og:description" content="Dermapen, camuflaje de estrías y cicatrices, micropigmentación y restauración en El Palomar." />
   <meta property="og:image" content="https://iili.io/quyS1ig.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -17,7 +17,7 @@
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Estética Melgar" />
-  <meta name="twitter:description" content="Camuflaje de estrías y cicatrices, limpieza profunda facial y atención personalizada en El Palomar." />
+  <meta name="twitter:description" content="Dermapen, camuflaje de estrías y cicatrices, micropigmentación y restauración en El Palomar." />
   <meta name="twitter:image" content="https://iili.io/quyS1ig.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -32,39 +32,43 @@
     }
 
     :root{
-      --surface: rgba(255,255,255,.26);
-      --surface-strong: rgba(255,255,255,.42);
-      --text: #4b3754;
-      --text-soft: #6f5b79;
-      --title: #3f2d4c;
-      --line: rgba(160,120,190,.22);
-      --accent: #9e72c8;
-      --accent-2: #c89ae2;
-      --accent-3: #e9d6f7;
+      --surface: rgba(255,255,255,.24);
+      --surface-strong: rgba(255,255,255,.38);
+      --text: #4e3959;
+      --text-soft: #705d79;
+      --title: #3f2b4c;
+      --accent: #9f72c9;
+      --accent-2: #ccb0eb;
+      --accent-3: #efe4fb;
+      --line: rgba(160,120,190,.18);
       --shadow: 0 18px 45px rgba(118, 80, 143, .12);
-      --hero-shadow: 0 25px 60px rgba(119, 83, 140, .18);
-      --glass-border: rgba(255,255,255,.45);
+      --hero-shadow: 0 25px 60px rgba(119, 83, 140, .16);
+      --glass-border: rgba(255,255,255,.42);
       --button-text: #ffffff;
       --footer: #4c355e;
       --header-bg: rgba(248,242,239,.24);
+      --chip-bg: rgba(255,255,255,.22);
+      --card-inner: rgba(255,255,255,.10);
     }
 
     body.dark{
       --surface: rgba(34,26,42,.34);
-      --surface-strong: rgba(40,31,48,.5);
+      --surface-strong: rgba(40,31,48,.48);
       --text: #efe7f7;
-      --text-soft: #cfbfde;
+      --text-soft: #d0c1de;
       --title: #ffffff;
-      --line: rgba(206,174,229,.18);
-      --accent: #be8df0;
-      --accent-2: #d8b5ff;
+      --accent: #c08ef1;
+      --accent-2: #dcbcff;
       --accent-3: rgba(190,141,240,.18);
-      --shadow: 0 18px 45px rgba(0,0,0,.28);
-      --hero-shadow: 0 25px 60px rgba(0,0,0,.35);
+      --line: rgba(206,174,229,.18);
+      --shadow: 0 18px 45px rgba(0,0,0,.30);
+      --hero-shadow: 0 25px 60px rgba(0,0,0,.34);
       --glass-border: rgba(255,255,255,.12);
       --button-text: #ffffff;
       --footer: #130f18;
       --header-bg: rgba(18,14,24,.28);
+      --chip-bg: rgba(40,31,48,.42);
+      --card-inner: rgba(255,255,255,.04);
     }
 
     *{
@@ -93,9 +97,9 @@
       inset:0;
       pointer-events:none;
       background:
-        radial-gradient(circle at 15% 10%, rgba(232,200,255,.12), transparent 28%),
-        radial-gradient(circle at 85% 20%, rgba(215,176,255,.10), transparent 26%),
-        radial-gradient(circle at 50% 85%, rgba(255,255,255,.08), transparent 30%);
+        radial-gradient(circle at 14% 12%, rgba(232,200,255,.10), transparent 28%),
+        radial-gradient(circle at 84% 20%, rgba(215,176,255,.08), transparent 26%),
+        radial-gradient(circle at 50% 85%, rgba(255,255,255,.06), transparent 30%);
       z-index:-1;
     }
 
@@ -143,7 +147,7 @@
       border-radius:999px;
       font-size:.88rem;
       color:var(--accent);
-      background:rgba(255,255,255,.20);
+      background:var(--chip-bg);
       border:1px solid var(--glass-border);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
@@ -167,7 +171,7 @@
     .site-header{
       position:sticky;
       top:0;
-      z-index:50;
+      z-index:60;
       padding:14px 0;
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
@@ -190,16 +194,16 @@
     }
 
     .brand-badge{
-      width:52px;
-      height:52px;
+      width:54px;
+      height:54px;
       border-radius:16px;
       overflow:hidden;
-      box-shadow:0 14px 30px rgba(158,114,200,.22);
       flex-shrink:0;
       border:1px solid rgba(255,255,255,.32);
       background:rgba(255,255,255,.16);
       display:grid;
       place-items:center;
+      box-shadow:0 14px 30px rgba(158,114,200,.22);
     }
 
     .brand-badge img{
@@ -220,7 +224,7 @@
     .brand-logo{
       font-family:"Bellarina", cursive;
       color:var(--title);
-      letter-spacing:.02em;
+      letter-spacing:.01em;
       display:flex;
       flex-direction:column;
       align-items:flex-start;
@@ -229,20 +233,18 @@
     }
 
     .brand-logo .top{
-      font-size:1.05rem;
-      text-transform:lowercase;
+      font-size:1.15rem;
     }
 
     .brand-logo .bottom{
-      font-size:1.65rem;
-      text-transform:lowercase;
+      font-size:1.78rem;
     }
 
-    .brand-text span{
+    .brand-text .sub{
       color:var(--text-soft);
       font-size:.80rem;
       display:block;
-      margin-top:6px;
+      margin-top:8px;
       white-space:nowrap;
       overflow:hidden;
       text-overflow:ellipsis;
@@ -309,14 +311,25 @@
       width:190px;
       height:190px;
       border-radius:50%;
-      background:radial-gradient(circle, rgba(212,173,239,.20) 0%, transparent 70%);
+      background:radial-gradient(circle, rgba(212,173,239,.18) 0%, transparent 70%);
       pointer-events:none;
+    }
+
+    .hero-brand{
+      font-family:"Bellarina", cursive;
+      color:var(--title);
+      font-size:clamp(2.2rem, 4.2vw, 4rem);
+      line-height:.72;
+      margin-bottom:10px;
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
     }
 
     .hero-title{
       color:var(--title);
-      font-size:clamp(2.2rem, 4vw, 4.2rem);
-      line-height:.95;
+      font-size:clamp(2rem, 3.6vw, 3.6rem);
+      line-height:.96;
       letter-spacing:-.03em;
       margin-bottom:12px;
     }
@@ -339,7 +352,7 @@
       padding:11px 14px;
       border-radius:999px;
       border:1px solid var(--glass-border);
-      background:rgba(255,255,255,.18);
+      background:var(--chip-bg);
       color:var(--title);
       font-size:.92rem;
       font-weight:500;
@@ -394,7 +407,11 @@
       box-shadow:var(--hero-shadow);
       border:1px solid rgba(255,255,255,.38);
       min-height:560px;
-      background:rgba(255,255,255,.10);
+      background:var(--card-inner);
+      padding:14px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
     }
 
     .hero-media img{
@@ -402,7 +419,7 @@
       height:100%;
       object-fit:contain;
       object-position:center;
-      background:transparent;
+      border-radius:24px;
     }
 
     .grid-4{
@@ -428,7 +445,7 @@
       align-items:center;
       justify-content:center;
       padding:10px;
-      background:rgba(255,255,255,.08);
+      background:var(--card-inner);
     }
 
     .service-image img{
@@ -466,7 +483,7 @@
       overflow:hidden;
       box-shadow:var(--hero-shadow);
       border:1px solid rgba(255,255,255,.35);
-      background:rgba(255,255,255,.08);
+      background:var(--card-inner);
       padding:10px;
     }
 
@@ -500,7 +517,7 @@
       padding:16px;
       border-radius:20px;
       border:1px solid var(--glass-border);
-      background:rgba(255,255,255,.16);
+      background:rgba(255,255,255,.14);
       box-shadow:var(--shadow);
     }
 
@@ -607,12 +624,6 @@
       border-radius:30px;
     }
 
-    .location-card h3{
-      color:var(--title);
-      font-size:1.25rem;
-      margin-bottom:10px;
-    }
-
     .location-card p{
       color:var(--text-soft);
       margin-bottom:12px;
@@ -628,7 +639,7 @@
     .location-badges span{
       padding:10px 13px;
       border-radius:999px;
-      background:rgba(255,255,255,.2);
+      background:var(--chip-bg);
       border:1px solid var(--glass-border);
       color:var(--title);
       font-size:.9rem;
@@ -736,6 +747,7 @@
         0 10px 24px rgba(0,0,0,.10),
         0 0 18px rgba(190,141,240,.16);
       transition:.25s ease;
+      overflow:hidden;
     }
 
     .float-btn:hover{
@@ -848,11 +860,15 @@
       }
 
       .brand-logo .top{
-        font-size:.95rem;
+        font-size:1rem;
       }
 
       .brand-logo .bottom{
-        font-size:1.45rem;
+        font-size:1.55rem;
+      }
+
+      .hero-brand{
+        font-size:2.8rem;
       }
     }
 
@@ -874,10 +890,10 @@
         </div>
         <div class="brand-text">
           <strong class="brand-logo">
-            <span class="top">Estetica</span>
+            <span class="top">Estética</span>
             <span class="bottom">Melgar</span>
           </strong>
-          <span>Micropigmentación & Restauración</span>
+          <span class="sub">Dermapen, Micropigmentación & Restauración</span>
         </div>
       </a>
 
@@ -896,27 +912,30 @@
     <section class="hero" id="inicio">
       <div class="container hero-wrap">
         <div class="hero-copy glass">
+          <div class="hero-brand">
+            <span>Estética</span>
+            <span>Melgar</span>
+          </div>
           <span class="eyebrow">Atención personalizada en El Palomar</span>
-          <h1 class="hero-title">Micropigmentación & Restauración</h1>
+          <h1 class="hero-title">Dermapen, Micropigmentación & Restauración</h1>
           <p class="hero-subtitle">
-            Camuflaje de estrías y cicatrices, limpieza profunda facial y tratamientos pensados para resaltar tu bienestar con una atención cercana, delicada y profesional.
+            Especialidad en Dermapen, camuflaje de estrías y cicatrices, micropigmentación y tratamientos pensados para cuidar, restaurar y realzar tu piel con una atención cercana y profesional.
           </p>
 
           <div class="chips">
+            <span class="chip">Dermapen</span>
             <span class="chip">Camuflaje de estrías y cicatrices</span>
+            <span class="chip">Micropigmentación & restauración</span>
             <span class="chip">Limpieza profunda facial</span>
-            <span class="chip">Reducción abdominal y corporal</span>
           </div>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="https://wa.me/5491126833154?text=Hola%20Estética%20Melgar,%20quisiera%20consultar%20por%20un%20turno.">
-              Pedir turno por WhatsApp
-            </a>
+            <a class="btn btn-primary" href="https://wa.me/5491126833154?text=Hola%20Estética%20Melgar,%20quisiera%20consultar%20por%20un%20turno.">Pedir turno por WhatsApp</a>
             <a class="btn btn-secondary" href="#galeria">Ver trabajos</a>
           </div>
         </div>
 
-        <div class="hero-media">
+        <div class="hero-media glass">
           <img src="https://iili.io/quyS1ig.png" alt="Header Estética Melgar" />
         </div>
       </div>
@@ -927,9 +946,9 @@
         <div class="section-head">
           <div>
             <span class="eyebrow">Servicios principales</span>
-            <h2>Tratamientos pensados para realzar y restaurar</h2>
+            <h2>Una propuesta enfocada en el cuidado y la restauración de la piel</h2>
             <p class="lead">
-              Una propuesta enfocada en resultados prolijos, acompañamiento personalizado y una atención cuidada en cada detalle.
+              Dermapen como especialidad principal, acompañado por tratamientos estéticos y de restauración trabajados con dedicación, cuidado y atención personalizada.
             </p>
           </div>
         </div>
@@ -937,11 +956,21 @@
         <div class="grid-4">
           <article class="service-card glass">
             <div class="service-image">
+              <img src="https://iili.io/quZMNIt.png" alt="Dermapen" />
+            </div>
+            <div class="service-body">
+              <h3>Dermapen</h3>
+              <p>Especialidad orientada a mejorar visiblemente la textura de la piel, acompañando procesos de renovación y cuidado facial.</p>
+            </div>
+          </article>
+
+          <article class="service-card glass">
+            <div class="service-image">
               <img src="https://iili.io/quZMX7p.jpg" alt="Camuflaje de estrías y cicatrices" />
             </div>
             <div class="service-body">
               <h3>Camuflaje de estrías y cicatrices</h3>
-              <p>Un trabajo delicado para mejorar visualmente la zona tratada y armonizar el tono de la piel.</p>
+              <p>Un trabajo delicado para armonizar visualmente la zona tratada y mejorar su apariencia con un resultado prolijo.</p>
             </div>
           </article>
 
@@ -951,27 +980,17 @@
             </div>
             <div class="service-body">
               <h3>Micropigmentación & restauración</h3>
-              <p>Tratamientos orientados a recuperar y embellecer zonas específicas con un enfoque natural y prolijo.</p>
+              <p>Tratamientos pensados para restaurar y embellecer zonas específicas con un enfoque natural, estético y personalizado.</p>
             </div>
           </article>
 
           <article class="service-card glass">
             <div class="service-image">
-              <img src="https://iili.io/quZMNIt.png" alt="Limpieza profunda facial" />
+              <img src="https://iili.io/quZvasV.jpg" alt="Tratamientos complementarios" />
             </div>
             <div class="service-body">
-              <h3>Limpieza profunda facial</h3>
-              <p>Una opción ideal para renovar la piel, mejorar su aspecto y mantener una rutina de cuidado más completa.</p>
-            </div>
-          </article>
-
-          <article class="service-card glass">
-            <div class="service-image">
-              <img src="https://iili.io/quZvasV.jpg" alt="Reducción abdominal y corporal" />
-            </div>
-            <div class="service-body">
-              <h3>Reducción abdominal y corporal</h3>
-              <p>Tratamientos corporales pensados para abdomen, glúteos, flancos y otras zonas según cada caso.</p>
+              <h3>Tratamientos complementarios</h3>
+              <p>Limpieza profunda facial y tratamientos corporales para acompañar el bienestar y el cuidado integral de cada persona.</p>
             </div>
           </article>
         </div>
@@ -991,20 +1010,20 @@
             En Estética Melgar, cada tratamiento se trabaja con dedicación, cuidado y una mirada personalizada para que cada persona se sienta cómoda, acompañada y segura durante todo el proceso.
           </p>
           <p>
-            La propuesta combina estética, restauración y bienestar, con un enfoque especial en camuflaje de estrías y cicatrices, además de servicios faciales y corporales adaptados a cada necesidad.
+            La propuesta tiene como foco principal el Dermapen, acompañado por micropigmentación y restauración, camuflaje de estrías y cicatrices, además de otros servicios faciales y corporales adaptados a cada necesidad.
           </p>
           <p>
-            El objetivo es brindar una experiencia agradable, profesional y prolija, donde el resultado final se sienta natural y armonioso.
+            El objetivo es brindar una experiencia agradable, profesional y prolija, donde el resultado final se sienta natural, armónico y alineado a lo que cada persona necesita.
           </p>
 
           <div class="mini-points">
             <div class="mini-point">
-              <strong>Atención personalizada</strong>
-              <span>Cada consulta se trabaja según tu necesidad y objetivo.</span>
+              <strong>Especialidad en Dermapen</strong>
+              <span>Un servicio protagonista dentro de la propuesta del espacio.</span>
             </div>
             <div class="mini-point">
-              <strong>Enfoque profesional</strong>
-              <span>Una propuesta delicada, clara y bien cuidada.</span>
+              <strong>Atención personalizada</strong>
+              <span>Cada consulta se trabaja según tu necesidad y objetivo.</span>
             </div>
             <div class="mini-point">
               <strong>Resultados prolijos</strong>
@@ -1024,9 +1043,9 @@
         <div class="section-head">
           <div>
             <span class="eyebrow">Galería</span>
-            <h2>Resultados y trabajos realizados</h2>
+            <h2>Trabajos y resultados</h2>
             <p class="lead">
-              Una selección de imágenes para mostrar parte del trabajo realizado y el estilo cuidado que acompaña cada tratamiento.
+              Una selección de imágenes para mostrar parte del trabajo realizado, con especial foco en tratamientos de piel, restauración y resultados cuidados.
             </p>
           </div>
         </div>
@@ -1051,7 +1070,7 @@
             <div style="text-align:center;">
               <span class="eyebrow" style="margin-bottom:12px;">Atención con turno</span>
               <h3 style="color:var(--title); font-size:1.35rem; margin-bottom:8px;">Consultas por WhatsApp</h3>
-              <p style="color:var(--text-soft); margin-bottom:18px;">Si querés consultar por un tratamiento o pedir turno, podés escribir de forma directa.</p>
+              <p style="color:var(--text-soft); margin-bottom:18px;">Si querés consultar por Dermapen, micropigmentación u otro tratamiento, podés escribir de forma directa.</p>
               <a class="btn btn-primary" href="https://wa.me/5491126833154?text=Hola%20Estética%20Melgar,%20quisiera%20consultar%20por%20un%20turno.">Escribir ahora</a>
             </div>
           </figure>
@@ -1076,8 +1095,8 @@
             <div class="review-stars">
               <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
             </div>
-            <p>"Me sentí super cómoda desde el primer momento. La atención fue muy cálida y el resultado me encantó."</p>
-            <strong>Camila C.</strong>
+            <p>"Me sentí super cómoda desde el primer momento. Consulté por Dermapen y la atención fue muy cálida y profesional."</p>
+            <strong>Camila</strong>
             <span>Cliente</span>
           </article>
 
@@ -1085,8 +1104,8 @@
             <div class="review-stars">
               <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
             </div>
-            <p>"Muy amorosa en el trato y muy profesional. Me explicó todo con claridad y quedé re conforme con el trabajo."</p>
-            <strong>Sofía G.</strong>
+            <p>"Muy amorosa en el trato y muy clara al explicar todo. Me encantó cómo trabaja y quedé re conforme con el resultado."</p>
+            <strong>Sofía</strong>
             <span>Cliente</span>
           </article>
 
@@ -1094,8 +1113,8 @@
             <div class="review-stars">
               <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
             </div>
-            <p>"Se nota el cuidado y la dedicación en cada detalle. El lugar transmite tranquilidad y confianza."</p>
-            <strong>Milagros A.</strong>
+            <p>"Se nota el cuidado y la dedicación en cada detalle. El lugar transmite tranquilidad y mucha confianza."</p>
+            <strong>Milagros</strong>
             <span>Cliente</span>
           </article>
 
@@ -1103,8 +1122,8 @@
             <div class="review-stars">
               <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
             </div>
-            <p>"Excelente experiencia. Me gustó mucho cómo trabaja y el resultado se vio natural y prolijo."</p>
-            <strong>Brenda.M</strong>
+            <p>"Excelente experiencia. Me gustó mucho cómo trabaja y el resultado se vio natural, prolijo y bien cuidado."</p>
+            <strong>Brenda</strong>
             <span>Cliente</span>
           </article>
         </div>
@@ -1124,9 +1143,9 @@
           </p>
 
           <div class="location-badges">
+            <span>Dermapen</span>
             <span>Turnos por WhatsApp</span>
             <span>Atención personalizada</span>
-            <span>Consultas directas</span>
           </div>
 
           <div class="hero-actions" style="margin-top:22px;">
@@ -1150,7 +1169,7 @@
       <div class="container">
         <div class="cta-card glass">
           <span class="eyebrow">Contacto directo</span>
-          <h2>Si querés consultar o pedir tu turno, escribime por WhatsApp</h2>
+          <h2>Si querés consultar por Dermapen o pedir tu turno, escribime por WhatsApp</h2>
           <p>
             Podés hacer tu consulta de forma simple y directa para recibir información sobre tratamientos, disponibilidad y atención.
           </p>
@@ -1166,7 +1185,7 @@
   <footer class="site-footer" id="footer">
     <div class="container">
       <div class="footer-wrap">
-        <p>Estética Melgar | Micropigmentación & Restauración</p>
+        <p>Estética Melgar | Dermapen, Micropigmentación & Restauración</p>
         <p>Creado y diseñado por <a href="https://ciborg347oficial.onrender.com" target="_blank" rel="noopener noreferrer">Ciborg 347</a></p>
       </div>
     </div>
