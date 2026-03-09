@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estetica Melgar | Micropigmentacion & Restauracion</title>
+  <meta name="description" content="Micropigmentacion y restauracion en El Palomar. Camuflaje de estrias y cicatrices, limpieza profunda facial y tratamientos corporales con atencion personalizada." />
+
+  <meta property="og:title" content="Estetica Melgar | Micropigmentacion & Restauracion" />
+  <meta property="og:description" content="Camuflaje de estrias y cicatrices, limpieza profunda facial y atencion personalizada en El Palomar." />
+  <meta property="og:image" content="https://iili.io/qutKeGj.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://estetica-melgar.onrender.com/" />
+  <meta property="og:locale" content="es_AR" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Estetica Melgar | Micropigmentacion & Restauracion" />
+  <meta name="twitter:description" content="Camuflaje de estrias y cicatrices, limpieza profunda facial y atencion personalizada en El Palomar." />
+  <meta name="twitter:image" content="https://iili.io/qutKeGj.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --bg: #f8f2ef;
+      --bg-soft: rgba(255,255,255,.45);
+      --bg-soft-2: rgba(255,255,255,.6);
+      --surface: rgba(255,255,255,.28);
+      --surface-strong: rgba(255,255,255,.5);
+      --text: #4b3754;
+      --text-soft: #6f5b79;
+      --title: #3f2d4c;
+      --line: rgba(160,120,190,.22);
+      --accent: #9e72c8;
+      --accent-2: #c89ae2;
+      --accent-3: #e9d6f7;
+      --shadow: 0 18px 45px rgba(118, 80, 143, .12);
+      --hero-shadow: 0 25px 60px rgba(119, 83, 140, .18);
+      --glass-border: rgba(255,255,255,.45);
+      --overlay: linear-gradient(180deg, rgba(248,242,239,.90) 0%, rgba(243,234,246,.84) 45%, rgba(248,242,239,.92) 100%);
+      --button-text: #ffffff;
+      --footer: #4c355e;
+    }
+
+    body.dark{
+      --bg: #1d1723;
+      --bg-soft: rgba(37,29,46,.52);
+      --bg-soft-2: rgba(41,32,51,.72);
+      --surface: rgba(43,34,54,.35);
+      --surface-strong: rgba(51,39,63,.55);
+      --text: #efe7f7;
+      --text-soft: #cfbfde;
+      --title: #ffffff;
+      --line: rgba(206,174,229,.18);
+      --accent: #be8df0;
+      --accent-2: #d8b5ff;
+      --accent-3: rgba(190,141,240,.18);
+      --shadow: 0 18px 45px rgba(0,0,0,.28);
+      --hero-shadow: 0 25px 60px rgba(0,0,0,.35);
+      --glass-border: rgba(255,255,255,.10);
+      --overlay: linear-gradient(180deg, rgba(18,14,24,.82) 0%, rgba(31,23,39,.84) 45%, rgba(19,14,24,.86) 100%);
+      --button-text: #ffffff;
+      --footer: #130f18;
+    }
+
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:"Outfit",sans-serif;
+      color:var(--text);
+      background:
+        var(--overlay),
+        url("https://iili.io/qumuCS1.jpg") center center / cover fixed no-repeat;
+      min-height:100vh;
+      line-height:1.5;
+      overflow-x:hidden;
+      transition:background .35s ease,color .35s ease;
+    }
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      background:
+        radial-gradient(circle at 15% 10%, rgba(232,200,255,.20), transparent 28%),
+        radial-gradient(circle at 85% 20%, rgba(215,176,255,.16), transparent 26%),
+        radial-gradient(circle at 50% 85%, rgba(255,255,255,.12), transparent 30%);
+      z-index:-1;
+    }
+
+    img{
+      display:block;
+      max-width:100%;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    .container{
+      width:min(1120px, calc(100% - 32px));
+      margin:0 auto;
+    }
+
+    .glass{
+      background:var(--surface);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border:1px solid var(--glass-border);
+      box-shadow:var(--shadow);
+    }
+
+    .section{
+      padding:78px 0;
+    }
+
+    .section-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:20px;
+      margin-bottom:30px;
+      flex-wrap:wrap;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:9px 14px;
+      border-radius:999px;
+      font-size:.88rem;
+      color:var(--accent);
+      background:rgba(255,255,255,.28);
+      border:1px solid var(--glass-border);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow:var(--shadow);
+      margin-bottom:14px;
+    }
+
+    .section h2{
+      font-size:clamp(1.8rem, 3vw, 2.6rem);
+      color:var(--title);
+      line-height:1.08;
+      margin-bottom:10px;
+    }
+
+    .section p.lead{
+      max-width:720px;
+      color:var(--text-soft);
+      font-size:1.02rem;
+    }
+
+    .site-header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      padding:14px 0;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      background:linear-gradient(180deg, rgba(248,242,239,.55) 0%, rgba(248,242,239,.18) 100%);
+      border-bottom:1px solid rgba(255,255,255,.14);
+    }
+
+    body.dark .site-header{
+      background:linear-gradient(180deg, rgba(18,14,24,.68) 0%, rgba(18,14,24,.24) 100%);
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+    }
+
+    .brand-badge{
+      width:42px;
+      height:42px;
+      border-radius:14px;
+      background:linear-gradient(135deg, rgba(201,154,226,.9), rgba(158,114,200,.95));
+      color:#fff;
+      display:grid;
+      place-items:center;
+      font-weight:800;
+      box-shadow:0 14px 30px rgba(158,114,200,.22);
+      flex-shrink:0;
+    }
+
+    .brand-text{
+      min-width:0;
+    }
+
+    .brand-text strong{
+      display:block;
+      color:var(--title);
+      font-size:1rem;
+      line-height:1.05;
+    }
+
+    .brand-text span{
+      color:var(--text-soft);
+      font-size:.86rem;
+      display:block;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    .nav-links a,
+    .toggle-theme{
+      padding:11px 14px;
+      border-radius:999px;
+      border:1px solid var(--glass-border);
+      background:var(--surface);
+      color:var(--text);
+      font-weight:500;
+      font-size:.95rem;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      transition:.25s ease;
+      cursor:pointer;
+      box-shadow:var(--shadow);
+    }
+
+    .nav-links a:hover,
+    .toggle-theme:hover{
+      transform:translateY(-2px);
+      border-color:rgba(158,114,200,.35);
+    }
+
+    .nav-cta{
+      background:linear-gradient(135deg, var(--accent), var(--accent-2)) !important;
+      color:var(--button-text) !important;
+      border-color:transparent !important;
+    }
+
+    .hero{
+      padding:64px 0 42px;
+    }
+
+    .hero-wrap{
+      display:grid;
+      grid-template-columns:1.04fr .96fr;
+      gap:26px;
+      align-items:center;
+    }
+
+    .hero-copy{
+      padding:34px;
+      border-radius:30px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero-copy::after{
+      content:"";
+      position:absolute;
+      inset:auto auto -70px -70px;
+      width:190px;
+      height:190px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(212,173,239,.26) 0%, transparent 70%);
+      pointer-events:none;
+    }
+
+    .hero-title{
+      color:var(--title);
+      font-size:clamp(2.2rem, 4vw, 4.2rem);
+      line-height:.95;
+      letter-spacing:-.03em;
+      margin-bottom:12px;
+    }
+
+    .hero-subtitle{
+      color:var(--text-soft);
+      font-size:1.05rem;
+      max-width:620px;
+      margin-bottom:20px;
+    }
+
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin:18px 0 24px;
+    }
+
+    .chip{
+      padding:11px 14px;
+      border-radius:999px;
+      border:1px solid var(--glass-border);
+      background:rgba(255,255,255,.22);
+      color:var(--title);
+      font-size:.92rem;
+      font-weight:500;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow:var(--shadow);
+    }
+
+    .hero-actions{
+      display:flex;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:6px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      min-height:50px;
+      padding:0 18px;
+      border-radius:999px;
+      border:1px solid transparent;
+      font-weight:600;
+      transition:.25s ease;
+      box-shadow:var(--shadow);
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg, var(--accent), var(--accent-2));
+      color:var(--button-text);
+    }
+
+    .btn-secondary{
+      background:var(--surface);
+      color:var(--text);
+      border-color:var(--glass-border);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .hero-media{
+      position:relative;
+      border-radius:34px;
+      overflow:hidden;
+      box-shadow:var(--hero-shadow);
+      border:1px solid rgba(255,255,255,.38);
+      min-height:560px;
+    }
+
+    .hero-media img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+    }
+
+    .hero-media::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, rgba(0,0,0,.02), rgba(0,0,0,.12));
+      pointer-events:none;
+    }
+
+    .grid-4{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+    }
+
+    .service-card{
+      border-radius:26px;
+      overflow:hidden;
+      transition:.3s ease;
+    }
+
+    .service-card:hover{
+      transform:translateY(-4px);
+    }
+
+    .service-image{
+      aspect-ratio: 4 / 3.25;
+      overflow:hidden;
+    }
+
+    .service-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+    }
+
+    .service-body{
+      padding:18px 18px 20px;
+    }
+
+    .service-body h3{
+      color:var(--title);
+      font-size:1.08rem;
+      margin-bottom:7px;
+      line-height:1.15;
+    }
+
+    .service-body p{
+      color:var(--text-soft);
+      font-size:.95rem;
+    }
+
+    .about-wrap{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:24px;
+      align-items:start;
+    }
+
+    .about-photo{
+      border-radius:28px;
+      overflow:hidden;
+      box-shadow:var(--hero-shadow);
+      border:1px solid rgba(255,255,255,.35);
+    }
+
+    .about-photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+    }
+
+    .about-card{
+      padding:30px;
+      border-radius:30px;
+    }
+
+    .about-card p{
+      color:var(--text-soft);
+      margin-bottom:14px;
+      font-size:1rem;
+    }
+
+    .mini-points{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:12px;
+      margin-top:18px;
+    }
+
+    .mini-point{
+      padding:16px;
+      border-radius:20px;
+      border:1px solid var(--glass-border);
+      background:rgba(255,255,255,.16);
+      box-shadow:var(--shadow);
+    }
+
+    .mini-point strong{
+      color:var(--title);
+      display:block;
+      margin-bottom:4px;
+      font-size:.98rem;
+    }
+
+    .mini-point span{
+      color:var(--text-soft);
+      font-size:.92rem;
+    }
+
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+    }
+
+    .gallery-item{
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      border:1px solid rgba(255,255,255,.3);
+      background:var(--surface);
+      min-height:260px;
+    }
+
+    .gallery-item img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+      transition:transform .4s ease;
+    }
+
+    .gallery-item:hover img{
+      transform:scale(1.04);
+    }
+
+    .reviews-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:18px;
+    }
+
+    .review-card{
+      padding:24px;
+      border-radius:26px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .review-card::after{
+      content:"";
+      position:absolute;
+      right:-18px;
+      top:-18px;
+      width:90px;
+      height:90px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(200,154,226,.18) 0%, transparent 68%);
+      pointer-events:none;
+    }
+
+    .review-stars{
+      display:flex;
+      gap:4px;
+      margin-bottom:12px;
+      color:var(--accent);
+    }
+
+    .review-card p{
+      color:var(--text-soft);
+      margin-bottom:16px;
+    }
+
+    .review-card strong{
+      color:var(--title);
+      display:block;
+      font-size:1rem;
+    }
+
+    .review-card span{
+      color:var(--text-soft);
+      font-size:.92rem;
+    }
+
+    .location-wrap{
+      display:grid;
+      grid-template-columns:.95fr 1.05fr;
+      gap:20px;
+      align-items:start;
+    }
+
+    .location-card{
+      padding:28px;
+      border-radius:30px;
+    }
+
+    .location-card h3{
+      color:var(--title);
+      font-size:1.25rem;
+      margin-bottom:10px;
+    }
+
+    .location-card p{
+      color:var(--text-soft);
+      margin-bottom:12px;
+    }
+
+    .location-badges{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:8px;
+    }
+
+    .location-badges span{
+      padding:10px 13px;
+      border-radius:999px;
+      background:rgba(255,255,255,.2);
+      border:1px solid var(--glass-border);
+      color:var(--title);
+      font-size:.9rem;
+      box-shadow:var(--shadow);
+    }
+
+    .map-card{
+      padding:10px;
+      border-radius:28px;
+      min-height:280px;
+    }
+
+    .map-card iframe{
+      width:100%;
+      height:260px;
+      border:0;
+      border-radius:22px;
+      filter:saturate(.92) contrast(1.02);
+    }
+
+    .cta-card{
+      padding:34px;
+      border-radius:32px;
+      text-align:center;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .cta-card::before{
+      content:"";
+      position:absolute;
+      inset:auto -60px -80px auto;
+      width:190px;
+      height:190px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(200,154,226,.22) 0%, transparent 70%);
+      pointer-events:none;
+    }
+
+    .cta-card h2{
+      margin-bottom:12px;
+    }
+
+    .cta-card p{
+      max-width:700px;
+      margin:0 auto 22px;
+      color:var(--text-soft);
+    }
+
+    .site-footer{
+      padding:28px 0 34px;
+      background:linear-gradient(180deg, transparent 0%, rgba(0,0,0,.02) 100%);
+    }
+
+    .footer-wrap{
+      padding:18px 20px;
+      border-radius:22px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+      background:var(--footer);
+      color:#ece3f7;
+    }
+
+    .footer-wrap p{
+      margin:0;
+      font-size:.96rem;
+    }
+
+    .footer-wrap a{
+      color:#d9a4ff;
+      font-weight:700;
+    }
+
+    .floating-actions{
+      position:fixed;
+      right:16px;
+      bottom:16px;
+      z-index:40;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      transition:transform .3s ease, opacity .3s ease;
+    }
+
+    .floating-actions.hide-near-footer{
+      transform:translateY(110px);
+      opacity:0;
+      pointer-events:none;
+    }
+
+    .float-btn{
+      width:52px;
+      height:52px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:rgba(255,255,255,.22);
+      border:1px solid rgba(255,255,255,.38);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow:
+        0 10px 24px rgba(0,0,0,.10),
+        0 0 18px rgba(190,141,240,.16);
+      transition:.25s ease;
+    }
+
+    .float-btn:hover{
+      transform:translateY(-3px) scale(1.03);
+      box-shadow:
+        0 14px 30px rgba(0,0,0,.14),
+        0 0 24px rgba(190,141,240,.26);
+    }
+
+    .float-btn svg{
+      width:24px;
+      height:24px;
+      fill:var(--accent);
+    }
+
+    .divider{
+      height:1px;
+      width:100%;
+      background:linear-gradient(90deg, transparent, var(--line), transparent);
+      margin:4px 0 0;
+    }
+
+    @media (max-width: 980px){
+      .hero-wrap,
+      .about-wrap,
+      .location-wrap{
+        grid-template-columns:1fr;
+      }
+
+      .grid-4{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .gallery-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .hero-media{
+        min-height:480px;
+      }
+    }
+
+    @media (max-width: 760px){
+      .site-header{
+        padding:10px 0;
+      }
+
+      .nav{
+        align-items:flex-start;
+        flex-direction:column;
+      }
+
+      .nav-links{
+        width:100%;
+        justify-content:flex-start;
+      }
+
+      .hero{
+        padding-top:34px;
+      }
+
+      .hero-copy{
+        padding:24px 20px;
+        border-radius:24px;
+      }
+
+      .hero-media{
+        min-height:390px;
+        border-radius:26px;
+      }
+
+      .section{
+        padding:58px 0;
+      }
+
+      .grid-4,
+      .reviews-grid,
+      .gallery-grid,
+      .mini-points{
+        grid-template-columns:1fr;
+      }
+
+      .about-card,
+      .location-card,
+      .cta-card{
+        padding:24px 20px;
+      }
+
+      .map-card iframe{
+        height:220px;
+      }
+
+      .floating-actions{
+        right:12px;
+        bottom:12px;
+      }
+
+      .float-btn{
+        width:48px;
+        height:48px;
+      }
+
+      .btn{
+        width:100%;
+      }
+
+      .hero-actions{
+        flex-direction:column;
+        align-items:stretch;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      *{
+        scroll-behavior:auto !important;
+        transition:none !important;
+        animation:none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#inicio" class="brand">
+        <div class="brand-badge">EM</div>
+        <div class="brand-text">
+          <strong>Estetica Melgar</strong>
+          <span>Micropigmentacion & Restauracion</span>
+        </div>
+      </a>
+
+      <div class="nav-links">
+        <a href="#servicios">Servicios</a>
+        <a href="#sobre-mi">Sobre mi</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#ubicacion">Ubicacion</a>
+        <button class="toggle-theme" id="themeToggle" type="button" aria-label="Cambiar tema">Tema</button>
+        <a class="nav-cta" href="https://wa.me/5491126833154?text=Hola%20Estetica%20Melgar,%20quisiera%20consultar%20por%20un%20turno.">Pedir turno</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-wrap">
+        <div class="hero-copy glass">
+          <span class="eyebrow">Atencion personalizada en El Palomar</span>
+          <h1 class="hero-title">Micropigmentacion & Restauracion</h1>
+          <p class="hero-subtitle">
+            Camuflaje de estrias y cicatrices, limpieza profunda facial y tratamientos pensados para resaltar tu bienestar con una atencion cercana, delicada y profesional.
+          </p>
+
+          <div class="chips">
+            <span class="chip">Camuflaje de estrias y cicatrices</span>
+            <span class="chip">Limpieza profunda facial</span>
+            <span class="chip">Reduccion abdominal y corporal</span>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/5491126833154?text=Hola%20Estetica%20Melgar,%20quisiera%20consultar%20por%20un%20turno.">
+              Pedir turno por WhatsApp
+            </a>
+            <a class="btn btn-secondary" href="#galeria">Ver trabajos</a>
+          </div>
+        </div>
+
+        <div class="hero-media">
+          <img src="https://iili.io/qutKeGj.png" alt="Hero Estetica Melgar" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="servicios">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Servicios principales</span>
+            <h2>Tratamientos pensados para realzar y restaurar</h2>
+            <p class="lead">
+              Una propuesta enfocada en resultados prolijos, acompanamiento personalizado y una atencion cuidada en cada detalle.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-4">
+          <article class="service-card glass">
+            <div class="service-image">
+              <img src="https://iili.io/quZMX7p.jpg" alt="Camuflaje de estrias y cicatrices" />
+            </div>
+            <div class="service-body">
+              <h3>Camuflaje de estrias y cicatrices</h3>
+              <p>Un trabajo delicado para mejorar visualmente la zona tratada y armonizar el tono de la piel.</p>
+            </div>
+          </article>
+
+          <article class="service-card glass">
+            <div class="service-image">
+              <img src="https://iili.io/quZMeQn.png" alt="Micropigmentacion y restauracion" />
+            </div>
+            <div class="service-body">
+              <h3>Micropigmentacion & restauracion</h3>
+              <p>Tratamientos orientados a recuperar y embellecer zonas especificas con un enfoque natural y prolijo.</p>
+            </div>
+          </article>
+
+          <article class="service-card glass">
+            <div class="service-image">
+              <img src="https://iili.io/quZMNIt.png" alt="Limpieza profunda facial" />
+            </div>
+            <div class="service-body">
+              <h3>Limpieza profunda facial</h3>
+              <p>Una opcion ideal para renovar la piel, mejorar su aspecto y mantener una rutina de cuidado mas completa.</p>
+            </div>
+          </article>
+
+          <article class="service-card glass">
+            <div class="service-image">
+              <img src="https://iili.io/quZvasV.jpg" alt="Reduccion abdominal y corporal" />
+            </div>
+            <div class="service-body">
+              <h3>Reduccion abdominal y corporal</h3>
+              <p>Tratamientos corporales pensados para abdomen, gluteos, flancos y otras zonas segun cada caso.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sobre-mi">
+      <div class="container about-wrap">
+        <div class="about-photo">
+          <img src="https://iili.io/quZZetI.png" alt="Sobre mi Estetica Melgar" />
+        </div>
+
+        <div class="about-card glass">
+          <span class="eyebrow">Sobre mi</span>
+          <h2>Atencion cercana, delicada y enfocada en cada detalle</h2>
+          <p>
+            En Estetica Melgar, cada tratamiento se trabaja con dedicacion, cuidado y una mirada personalizada para que cada persona se sienta comoda, acompanada y segura durante todo el proceso.
+          </p>
+          <p>
+            La propuesta combina estetica, restauracion y bienestar, con un enfoque especial en camuflaje de estrias y cicatrices, ademas de servicios faciales y corporales adaptados a cada necesidad.
+          </p>
+          <p>
+            El objetivo es brindar una experiencia agradable, profesional y prolija, donde el resultado final se sienta natural y armonioso.
+          </p>
+
+          <div class="mini-points">
+            <div class="mini-point">
+              <strong>Atencion personalizada</strong>
+              <span>Cada consulta se trabaja segun tu necesidad y objetivo.</span>
+            </div>
+            <div class="mini-point">
+              <strong>Enfoque profesional</strong>
+              <span>Una propuesta delicada, clara y bien cuidada.</span>
+            </div>
+            <div class="mini-point">
+              <strong>Resultados prolijos</strong>
+              <span>Tratamientos pensados para lucir naturales y armoniosos.</span>
+            </div>
+            <div class="mini-point">
+              <strong>Ubicacion accesible</strong>
+              <span>Atencion en El Palomar, Buenos Aires.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="galeria">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Galeria</span>
+            <h2>Resultados y trabajos realizados</h2>
+            <p class="lead">
+              Una seleccion de imagenes para mostrar parte del trabajo realizado y el estilo cuidado que acompana cada tratamiento.
+            </p>
+          </div>
+        </div>
+
+        <div class="gallery-grid">
+          <figure class="gallery-item">
+            <img src="https://iili.io/quZFYG4.png" alt="Trabajo realizado 1" />
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://iili.io/quZFuun.png" alt="Trabajo realizado 2" />
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://iili.io/quZFo3N.png" alt="Trabajo realizado 3" />
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://iili.io/quZFBGR.png" alt="Trabajo realizado 4" />
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://iili.io/quZFecB.png" alt="Trabajo realizado 5" />
+          </figure>
+          <figure class="gallery-item glass" style="display:grid; place-items:center; padding:26px;">
+            <div style="text-align:center;">
+              <span class="eyebrow" style="margin-bottom:12px;">Atencion con turno</span>
+              <h3 style="color:var(--title); font-size:1.35rem; margin-bottom:8px;">Consultas por WhatsApp</h3>
+              <p style="color:var(--text-soft); margin-bottom:18px;">Si queres consultar por un tratamiento o pedir turno, podes escribir de forma directa.</p>
+              <a class="btn btn-primary" href="https://wa.me/5491126833154?text=Hola%20Estetica%20Melgar,%20quisiera%20consultar%20por%20un%20turno.">Escribir ahora</a>
+            </div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="resenas">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Resenas</span>
+            <h2>La experiencia de quienes ya pasaron por el espacio</h2>
+            <p class="lead">
+              Comentarios breves que reflejan el trato, la confianza y el cuidado que se busca transmitir en cada atencion.
+            </p>
+          </div>
+        </div>
+
+        <div class="reviews-grid">
+          <article class="review-card glass">
+            <div class="review-stars">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <p>"Me senti super comoda desde el primer momento. La atencion fue muy calida y el resultado me encanto."</p>
+            <strong>Camila</strong>
+            <span>Cliente</span>
+          </article>
+
+          <article class="review-card glass">
+            <div class="review-stars">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <p>"Muy amorosa en el trato y muy profesional. Me explico todo con claridad y quede re conforme con el trabajo."</p>
+            <strong>Sofia</strong>
+            <span>Cliente</span>
+          </article>
+
+          <article class="review-card glass">
+            <div class="review-stars">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <p>"Se nota el cuidado y la dedicacion en cada detalle. El lugar transmite tranquilidad y confianza."</p>
+            <strong>Milagros</strong>
+            <span>Cliente</span>
+          </article>
+
+          <article class="review-card glass">
+            <div class="review-stars">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <p>"Excelente experiencia. Me gusto mucho como trabaja y el resultado se vio natural y prolijo."</p>
+            <strong>Brenda</strong>
+            <span>Cliente</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="ubicacion">
+      <div class="container location-wrap">
+        <div class="location-card glass">
+          <span class="eyebrow">Ubicacion</span>
+          <h2 style="margin-bottom:10px;">Atencion en El Palomar</h2>
+          <p>
+            Carlos Octavio Bunge 930, El Palomar, Buenos Aires.
+          </p>
+          <p>
+            Un espacio pensado para brindarte una atencion comoda, personalizada y con un entorno agradable.
+          </p>
+
+          <div class="location-badges">
+            <span>Turnos por WhatsApp</span>
+            <span>Atencion personalizada</span>
+            <span>Consultas directas</span>
+          </div>
+
+          <div class="hero-actions" style="margin-top:22px;">
+            <a class="btn btn-primary" href="https://wa.me/5491126833154?text=Hola%20Estetica%20Melgar,%20quisiera%20consultar%20por%20un%20turno.">Pedir turno</a>
+            <a class="btn btn-secondary" href="https://www.google.com/maps/search/?api=1&query=Carlos+Octavio+Bunge+930,+El+Palomar,+Buenos+Aires" target="_blank" rel="noopener noreferrer">Ver en Maps</a>
+          </div>
+        </div>
+
+        <div class="map-card glass">
+          <iframe
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Carlos%20Octavio%20Bunge%20930,%20El%20Palomar,%20Buenos%20Aires&output=embed">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-card glass">
+          <span class="eyebrow">Contacto directo</span>
+          <h2>Si queres consultar o pedir tu turno, escribime por WhatsApp</h2>
+          <p>
+            Podes hacer tu consulta de forma simple y directa para recibir informacion sobre tratamientos, disponibilidad y atencion.
+          </p>
+          <div class="hero-actions" style="justify-content:center;">
+            <a class="btn btn-primary" href="https://wa.me/5491126833154?text=Hola%20Estetica%20Melgar,%20quisiera%20consultar%20por%20un%20turno.">WhatsApp</a>
+            <a class="btn btn-secondary" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="footer">
+    <div class="container">
+      <div class="footer-wrap">
+        <p>Estetica Melgar | Micropigmentacion & Restauracion</p>
+        <p>Creado y diseñado por <a href="https://ciborg347oficial.onrender.com" target="_blank" rel="noopener noreferrer">Ciborg 347</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="floating-actions" id="floatingActions">
+    <a
+      class="float-btn"
+      href="https://www.instagram.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Instagram">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.8A3.95 3.95 0 0 0 3.8 7.75v8.5a3.95 3.95 0 0 0 3.95 3.95h8.5a3.95 3.95 0 0 0 3.95-3.95v-8.5a3.95 3.95 0 0 0-3.95-3.95Zm8.9 1.35a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2ZM12 6.85A5.15 5.15 0 1 1 6.85 12 5.16 5.16 0 0 1 12 6.85Zm0 1.8A3.35 3.35 0 1 0 15.35 12 3.35 3.35 0 0 0 12 8.65Z"/>
+      </svg>
+    </a>
+
+    <a
+      class="float-btn"
+      href="https://wa.me/5491126833154?text=Hola%20Estetica%20Melgar,%20quisiera%20consultar%20por%20un%20turno."
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12.04 2C6.52 2 2.03 6.36 2.03 11.74c0 1.87.54 3.69 1.56 5.27L2 22l5.18-1.52a10.18 10.18 0 0 0 4.86 1.23h.01c5.52 0 10-4.36 10-9.74C22.05 6.36 17.56 2 12.04 2Zm0 18.02h-.01a8.46 8.46 0 0 1-4.32-1.18l-.31-.18-3.07.9.92-2.96-.2-.31a8.09 8.09 0 0 1-1.29-4.32c0-4.45 3.72-8.07 8.29-8.07 4.57 0 8.29 3.62 8.29 8.07 0 4.45-3.72 8.05-8.3 8.05Zm4.55-6.08c-.25-.12-1.47-.71-1.7-.79-.23-.08-.4-.12-.57.12-.17.24-.65.79-.8.95-.15.16-.3.18-.55.06-.25-.12-1.07-.39-2.03-1.25-.75-.67-1.26-1.49-1.41-1.74-.15-.24-.02-.37.11-.49.11-.1.25-.26.37-.39.12-.14.16-.24.25-.4.08-.16.04-.3-.02-.43-.06-.12-.57-1.34-.78-1.83-.21-.49-.42-.42-.57-.43h-.49c-.17 0-.43.06-.66.3-.23.24-.87.85-.87 2.07 0 1.22.89 2.39 1.02 2.55.12.16 1.74 2.67 4.21 3.74.59.25 1.05.4 1.41.51.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.67-1.18.21-.59.21-1.09.15-1.19-.06-.1-.23-.16-.49-.28Z"/>
+      </svg>
+    </a>
+  </div>
+
+  <script>
+    const body = document.body;
+    const themeToggle = document.getElementById("themeToggle");
+    const savedTheme = localStorage.getItem("melgar-theme");
+
+    if (savedTheme === "dark") {
+      body.classList.add("dark");
+    }
+
+    themeToggle.addEventListener("click", () => {
+      body.classList.toggle("dark");
+      localStorage.setItem("melgar-theme", body.classList.contains("dark") ? "dark" : "light");
+    });
+
+    const floatingActions = document.getElementById("floatingActions");
+    const footer = document.getElementById("footer");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          floatingActions.classList.add("hide-near-footer");
+        } else {
+          floatingActions.classList.remove("hide-near-footer");
+        }
+      });
+    }, { threshold: 0.15 });
+
+    observer.observe(footer);
+  </script>
+</body>
+</html>
