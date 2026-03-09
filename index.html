@@ -622,10 +622,40 @@
       pointer-events:none;
     }
 
+    .review-header{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      margin-bottom:14px;
+    }
+
+    .review-avatar{
+      width:58px;
+      height:58px;
+      border-radius:50%;
+      overflow:hidden;
+      flex-shrink:0;
+      border:2px solid rgba(255,255,255,.45);
+      box-shadow:0 10px 24px rgba(0,0,0,.12);
+      background:rgba(255,255,255,.18);
+    }
+
+    .review-avatar img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+      border-radius:50%;
+    }
+
+    .review-meta{
+      min-width:0;
+    }
+
     .review-stars{
       display:flex;
       gap:4px;
-      margin-bottom:12px;
+      margin-bottom:6px;
       color:var(--accent);
     }
 
@@ -808,8 +838,11 @@
     }
 
     .instagram-float img{
-      object-fit:cover;
+      width:72%;
+      height:72%;
+      object-fit:contain;
       border-radius:50%;
+      margin:auto;
     }
 
     @media (max-width: 980px){
@@ -916,6 +949,11 @@
       .toggle-theme{
         width:44px;
         height:44px;
+      }
+
+      .instagram-float img{
+        width:68%;
+        height:68%;
       }
     }
 
@@ -1151,39 +1189,67 @@
 
         <div class="reviews-grid">
           <article class="review-card glass">
-            <div class="review-stars">
-              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            <div class="review-header">
+              <div class="review-avatar">
+                <img src="https://iili.io/qAYfsmN.png" alt="Brenda M." />
+              </div>
+              <div class="review-meta">
+                <div class="review-stars">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <strong>Brenda M.</strong>
+                <span>Cliente</span>
+              </div>
             </div>
             <p>"Me sentí super cómoda desde el primer momento. Consulté por Dermapen y la atención fue muy cálida y profesional."</p>
-            <strong>Camila</strong>
-            <span>Cliente</span>
           </article>
 
           <article class="review-card glass">
-            <div class="review-stars">
-              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            <div class="review-header">
+              <div class="review-avatar">
+                <img src="https://iili.io/qAYfP7R.png" alt="Daniela R." />
+              </div>
+              <div class="review-meta">
+                <div class="review-stars">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <strong>Daniela R.</strong>
+                <span>Cliente</span>
+              </div>
             </div>
             <p>"Muy amorosa en el trato y muy clara al explicar todo. Me encantó cómo trabaja y quedé re conforme con el resultado."</p>
-            <strong>Sofía</strong>
-            <span>Cliente</span>
           </article>
 
           <article class="review-card glass">
-            <div class="review-stars">
-              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            <div class="review-header">
+              <div class="review-avatar">
+                <img src="https://iili.io/qAYfiep.png" alt="Milagros C." />
+              </div>
+              <div class="review-meta">
+                <div class="review-stars">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <strong>Milagros C.</strong>
+                <span>Cliente</span>
+              </div>
             </div>
             <p>"Se nota el cuidado y la dedicación en cada detalle. El lugar transmite tranquilidad y mucha confianza."</p>
-            <strong>Milagros</strong>
-            <span>Cliente</span>
           </article>
 
           <article class="review-card glass">
-            <div class="review-stars">
-              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            <div class="review-header">
+              <div class="review-avatar">
+                <img src="https://iili.io/qAYfrrJ.png" alt="Sofía L." />
+              </div>
+              <div class="review-meta">
+                <div class="review-stars">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <strong>Sofía L.</strong>
+                <span>Cliente</span>
+              </div>
             </div>
             <p>"Excelente experiencia. Me gustó mucho cómo trabaja y el resultado se vio natural, prolijo y bien cuidado."</p>
-            <strong>Brenda</strong>
-            <span>Cliente</span>
           </article>
         </div>
       </div>
