@@ -197,6 +197,7 @@
       align-items:center;
       justify-content:space-between;
       gap:16px;
+      position:relative;
     }
 
     .brand{
@@ -204,6 +205,7 @@
       align-items:center;
       gap:12px;
       min-width:0;
+      flex:1;
     }
 
     .brand-badge{
@@ -321,6 +323,73 @@
 
     .toggle-theme:hover svg{
       transform:rotate(8deg);
+    }
+
+    .nav-right{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin-left:auto;
+    }
+
+    .menu-toggle{
+      display:none;
+      width:46px;
+      height:46px;
+      border-radius:14px;
+      border:1px solid var(--glass-border);
+      background:var(--surface);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow:var(--shadow);
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      flex-shrink:0;
+    }
+
+    .menu-toggle span{
+      display:block;
+      width:20px;
+      height:2px;
+      background:var(--title);
+      border-radius:999px;
+      position:relative;
+      transition:.25s ease;
+    }
+
+    .menu-toggle span::before,
+    .menu-toggle span::after{
+      content:"";
+      position:absolute;
+      left:0;
+      width:20px;
+      height:2px;
+      background:var(--title);
+      border-radius:999px;
+      transition:.25s ease;
+    }
+
+    .menu-toggle span::before{
+      top:-6px;
+    }
+
+    .menu-toggle span::after{
+      top:6px;
+    }
+
+    .menu-toggle.active span{
+      background:transparent;
+    }
+
+    .menu-toggle.active span::before{
+      top:0;
+      transform:rotate(45deg);
+    }
+
+    .menu-toggle.active span::after{
+      top:0;
+      transform:rotate(-45deg);
     }
 
     .hero{
@@ -1000,13 +1069,46 @@
       }
 
       .nav{
-        align-items:flex-start;
-        flex-direction:column;
+        align-items:center;
+        flex-wrap:wrap;
+      }
+
+      .brand{
+        flex:1;
+        min-width:0;
+      }
+
+      .brand-text .sub{
+        max-width:180px;
+      }
+
+      .menu-toggle{
+        display:flex;
+      }
+
+      .nav-right{
+        order:2;
       }
 
       .nav-links{
         width:100%;
+        order:3;
+        display:none;
+        flex-direction:column;
+        align-items:stretch;
         justify-content:flex-start;
+        gap:10px;
+        padding-top:12px;
+      }
+
+      .nav-links.open{
+        display:flex;
+      }
+
+      .nav-links a,
+      .nav-links .nav-cta{
+        width:100%;
+        text-align:center;
       }
 
       .hero{
@@ -1121,12 +1223,7 @@
         </div>
       </a>
 
-      <div class="nav-links">
-        <a href="#servicios">Servicios</a>
-        <a href="#galeria">Galería</a>
-        <a href="#videos">Videos</a>
-        <a href="#faq">FAQs</a>
-        <a href="#ubicacion">Ubicación</a>
+      <div class="nav-right">
         <button class="toggle-theme" id="themeToggle" type="button" aria-label="Cambiar tema">
           <svg id="themeIcon" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M12 3V5"></path>
@@ -1140,6 +1237,18 @@
             <circle cx="12" cy="12" r="4"></circle>
           </svg>
         </button>
+
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-expanded="false">
+          <span></span>
+        </button>
+      </div>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#servicios">Servicios</a>
+        <a href="#galeria">Galería</a>
+        <a href="#videos">Videos</a>
+        <a href="#faq">FAQs</a>
+        <a href="#ubicacion">Ubicación</a>
         <a class="nav-cta" href="https://wa.me/5491126833154?text=Hola%20Est%C3%A9tica%20Melgar,%20quisiera%20consultar%20por%20un%20turno.">Pedir turno</a>
       </div>
     </div>
@@ -1659,6 +1768,8 @@
     const themeToggle = document.getElementById("themeToggle");
     const themeIcon = document.getElementById("themeIcon");
     const savedTheme = localStorage.getItem("melgar-theme");
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
 
     function setThemeIcon() {
       if (body.classList.contains("dark")) {
@@ -1688,6 +1799,22 @@
       body.classList.toggle("dark");
       localStorage.setItem("melgar-theme", body.classList.contains("dark") ? "dark" : "light");
       setThemeIcon();
+    });
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      menuToggle.classList.toggle("active", isOpen);
+      menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        if (window.innerWidth <= 760) {
+          navLinks.classList.remove("open");
+          menuToggle.classList.remove("active");
+          menuToggle.setAttribute("aria-expanded", "false");
+        }
+      });
     });
 
     const floatingActions = document.getElementById("floatingActions");
