@@ -641,64 +641,111 @@
       font-size:.92rem;
     }
 
-    .gallery-groups{
+    .gallery-open{
       display:grid;
-      gap:22px;
+      gap:36px;
     }
 
-    .gallery-group{
-      border-radius:28px;
-      padding:22px;
-      overflow:hidden;
+    .gallery-block{
+      display:grid;
+      gap:14px;
     }
 
-    .gallery-group-head{
-      margin-bottom:16px;
-    }
-
-    .gallery-group-head h3{
+    .gallery-copy h3{
       color:var(--title);
-      font-size:1.25rem;
+      font-size:1.22rem;
       margin-bottom:6px;
       line-height:1.1;
     }
 
-    .gallery-group-head p{
+    .gallery-copy p{
       color:var(--text-soft);
-      font-size:.96rem;
+      font-size:.97rem;
+      max-width:760px;
     }
 
-    .gallery-grid{
+    .gallery-row{
       display:grid;
       grid-template-columns:repeat(4,1fr);
-      gap:16px;
+      gap:14px;
     }
 
-    .gallery-item{
-      border-radius:24px;
+    .gallery-thumb{
+      position:relative;
+      border:none;
+      background:transparent;
+      padding:0;
+      cursor:pointer;
       overflow:hidden;
-      box-shadow:var(--shadow);
-      border:1px solid rgba(255,255,255,.3);
-      background:var(--surface);
-      min-height:240px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:12px;
+      border-radius:22px;
+      min-height:220px;
     }
 
-    .gallery-item img{
+    .gallery-thumb img{
       width:100%;
       height:100%;
-      object-fit:contain;
+      object-fit:cover;
       object-position:center;
-      transition:transform .4s ease;
-      border-radius:18px;
-      background:rgba(255,255,255,.08);
+      border-radius:22px;
+      transition:transform .25s ease, box-shadow .25s ease, filter .25s ease;
+      box-shadow:var(--shadow);
     }
 
-    .gallery-item:hover img{
+    .gallery-thumb:hover img,
+    .gallery-thumb:focus-visible img{
       transform:scale(1.03);
+      box-shadow:0 18px 40px rgba(0,0,0,.14);
+      filter:saturate(1.02);
+    }
+
+    .gallery-thumb.hidden-photo{
+      display:none;
+    }
+
+    .gallery-actions{
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      margin-top:30px;
+      flex-wrap:wrap;
+    }
+
+    .instagram-more{
+      display:none;
+    }
+
+    .map-stack{
+      display:grid;
+      gap:12px;
+    }
+
+    .map-card{
+      padding:10px;
+      border-radius:28px;
+      min-height:280px;
+    }
+
+    .map-card iframe{
+      width:100%;
+      height:260px;
+      border:0;
+      border-radius:22px;
+      filter:saturate(.92) contrast(1.02);
+      display:block;
+    }
+
+    .map-photo{
+      padding:10px;
+      border-radius:24px;
+      overflow:hidden;
+    }
+
+    .map-photo img{
+      width:100%;
+      height:230px;
+      object-fit:cover;
+      object-position:center;
+      border-radius:18px;
     }
 
     .video-grid{
@@ -928,20 +975,6 @@
       box-shadow:var(--shadow);
     }
 
-    .map-card{
-      padding:10px;
-      border-radius:28px;
-      min-height:280px;
-    }
-
-    .map-card iframe{
-      width:100%;
-      height:260px;
-      border:0;
-      border-radius:22px;
-      filter:saturate(.92) contrast(1.02);
-    }
-
     .cta-card{
       padding:34px;
       border-radius:32px;
@@ -1064,6 +1097,63 @@
       margin:auto;
     }
 
+    .lightbox{
+      position:fixed;
+      inset:0;
+      background:rgba(10,8,14,.82);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+      z-index:120;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .lightbox.open{
+      display:flex;
+    }
+
+    .lightbox-inner{
+      position:relative;
+      max-width:min(980px, 92vw);
+      max-height:88vh;
+      width:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .lightbox-img{
+      max-width:100%;
+      max-height:88vh;
+      border-radius:24px;
+      box-shadow:0 22px 60px rgba(0,0,0,.35);
+      transform:scale(1);
+      animation:lightboxZoom .18s ease;
+    }
+
+    .lightbox-close{
+      position:absolute;
+      top:-14px;
+      right:-4px;
+      width:44px;
+      height:44px;
+      border:none;
+      border-radius:50%;
+      background:rgba(255,255,255,.16);
+      color:#fff;
+      font-size:1.5rem;
+      cursor:pointer;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    @keyframes lightboxZoom{
+      from{ transform:scale(.96); opacity:.7; }
+      to{ transform:scale(1); opacity:1; }
+    }
+
     @media (max-width: 980px){
       .hero-wrap,
       .about-wrap,
@@ -1076,7 +1166,7 @@
         grid-template-columns:repeat(2,1fr);
       }
 
-      .gallery-grid,
+      .gallery-row,
       .video-grid{
         grid-template-columns:repeat(2,1fr);
       }
@@ -1158,7 +1248,7 @@
 
       .grid-4,
       .reviews-grid,
-      .gallery-grid,
+      .gallery-row,
       .video-grid,
       .mini-points{
         grid-template-columns:1fr;
@@ -1167,12 +1257,12 @@
       .about-card,
       .location-card,
       .cta-card,
-      .faq-intro,
-      .gallery-group{
+      .faq-intro{
         padding:24px 20px;
       }
 
-      .map-card iframe{
+      .map-card iframe,
+      .map-photo img{
         height:220px;
       }
 
@@ -1223,6 +1313,15 @@
 
       .service-image{
         aspect-ratio:3 / 4.4;
+      }
+
+      .lightbox{
+        padding:16px;
+      }
+
+      .lightbox-close{
+        top:-8px;
+        right:0;
       }
     }
 
@@ -1417,70 +1516,114 @@
         <div class="section-head">
           <div>
             <span class="eyebrow">Galería</span>
-            <h2>Trabajos y resultados</h2>
+            <h2>Resultados y proceso de trabajo</h2>
             <p class="lead">
-              Una selección organizada por servicio para que se entienda mejor a qué tratamiento corresponde cada imagen.
+              Una galería más abierta para mostrar parte de los tratamientos, su evolución y parte del trabajo realizado en el espacio.
             </p>
           </div>
         </div>
 
-        <div class="gallery-groups">
-          <article class="gallery-group glass">
-            <div class="gallery-group-head">
+        <div class="gallery-open">
+          <div class="gallery-block">
+            <div class="gallery-copy">
               <h3>Plasma Pen</h3>
               <p>Evolución del tratamiento Plasma Pen.</p>
             </div>
-            <div class="gallery-grid">
-              <figure class="gallery-item">
+            <div class="gallery-row">
+              <button class="gallery-thumb" type="button" data-full="https://iili.io/q5J0aKQ.jpg" aria-label="Abrir imagen Plasma Pen 1">
                 <img src="https://iili.io/q5J0aKQ.jpg" alt="Evolución del tratamiento Plasma Pen 1" />
-              </figure>
-              <figure class="gallery-item">
+              </button>
+              <button class="gallery-thumb" type="button" data-full="https://iili.io/q5J0clV.jpg" aria-label="Abrir imagen Plasma Pen 2">
                 <img src="https://iili.io/q5J0clV.jpg" alt="Evolución del tratamiento Plasma Pen 2" />
-              </figure>
+              </button>
             </div>
-          </article>
+          </div>
 
-          <article class="gallery-group glass">
-            <div class="gallery-group-head">
+          <div class="gallery-block">
+            <div class="gallery-copy">
               <h3>Camuflaje de estrías</h3>
               <p>Evolución del tratamiento de camuflaje de estrías.</p>
             </div>
-            <div class="gallery-grid">
-              <figure class="gallery-item">
+            <div class="gallery-row">
+              <button class="gallery-thumb" type="button" data-full="https://iili.io/q5KHC2p.jpg" aria-label="Abrir imagen camuflaje de estrías 1">
                 <img src="https://iili.io/q5KHC2p.jpg" alt="Evolución del tratamiento de camuflaje de estrías 1" />
-              </figure>
-              <figure class="gallery-item">
+              </button>
+              <button class="gallery-thumb" type="button" data-full="https://iili.io/q5K0Gn9.jpg" aria-label="Abrir imagen camuflaje de estrías 2">
                 <img src="https://iili.io/q5K0Gn9.jpg" alt="Evolución del tratamiento de camuflaje de estrías 2" />
-              </figure>
-              <figure class="gallery-item">
-                <img src="https://iili.io/q5KhnLl.jpg" alt="Evolución del tratamiento de camuflaje de estrías 3" />
-              </figure>
-              <figure class="gallery-item">
-                <img src="https://iili.io/q5KKyPe.jpg" alt="Evolución del tratamiento de camuflaje de estrías 4" />
-              </figure>
+              </button>
             </div>
-          </article>
+          </div>
 
-          <article class="gallery-group glass">
-            <div class="gallery-group-head">
+          <div class="gallery-block">
+            <div class="gallery-copy">
               <h3>Blanqueamiento corporal</h3>
               <p>Resultados y evolución del tratamiento de blanqueamiento corporal.</p>
             </div>
-            <div class="gallery-grid">
-              <figure class="gallery-item">
-                <img src="https://iili.io/q5BrOq7.png" alt="Blanqueamiento corporal 1" />
-              </figure>
-              <figure class="gallery-item">
-                <img src="https://iili.io/q5Br8du.png" alt="Blanqueamiento corporal 2" />
-              </figure>
-              <figure class="gallery-item">
-                <img src="https://iili.io/q5CHySj.png" alt="Blanqueamiento corporal 3" />
-              </figure>
-              <figure class="gallery-item">
-                <img src="https://iili.io/q5CJHHx.png" alt="Blanqueamiento corporal 4" />
-              </figure>
+            <div class="gallery-row">
+              <button class="gallery-thumb" type="button" data-full="https://iili.io/q5BrOq7.png" aria-label="Abrir imagen blanqueamiento corporal 1">
+                <img src="https://iili.io/q5BrOq7.png" alt="Resultados del tratamiento de blanqueamiento corporal 1" />
+              </button>
+              <button class="gallery-thumb" type="button" data-full="https://iili.io/q5Br8du.png" aria-label="Abrir imagen blanqueamiento corporal 2">
+                <img src="https://iili.io/q5Br8du.png" alt="Resultados del tratamiento de blanqueamiento corporal 2" />
+              </button>
             </div>
-          </article>
+          </div>
+
+          <div class="gallery-block">
+            <div class="gallery-copy">
+              <h3>Limpieza facial</h3>
+              <p>Proceso y resultados de limpieza facial profunda.</p>
+            </div>
+            <div class="gallery-row">
+              <button class="gallery-thumb" type="button" data-full="https://iili.io/q5ThA6F.jpg" aria-label="Abrir imagen limpieza facial 1">
+                <img src="https://iili.io/q5ThA6F.jpg" alt="Limpieza facial profunda 1" />
+              </button>
+              <button class="gallery-thumb" type="button" data-full="https://iili.io/q5ThTCP.jpg" aria-label="Abrir imagen limpieza facial 2">
+                <img src="https://iili.io/q5ThTCP.jpg" alt="Limpieza facial profunda 2" />
+              </button>
+            </div>
+          </div>
+
+          <div class="gallery-block hidden-photo">
+            <div class="gallery-copy">
+              <h3>Más sobre camuflaje de estrías</h3>
+              <p>Más imágenes para mostrar la evolución del tratamiento.</p>
+            </div>
+            <div class="gallery-row">
+              <button class="gallery-thumb hidden-photo" type="button" data-full="https://iili.io/q5KhnLl.jpg" aria-label="Abrir imagen camuflaje de estrías 3">
+                <img src="https://iili.io/q5KhnLl.jpg" alt="Evolución del tratamiento de camuflaje de estrías 3" />
+              </button>
+              <button class="gallery-thumb hidden-photo" type="button" data-full="https://iili.io/q5KKyPe.jpg" aria-label="Abrir imagen camuflaje de estrías 4">
+                <img src="https://iili.io/q5KKyPe.jpg" alt="Evolución del tratamiento de camuflaje de estrías 4" />
+              </button>
+            </div>
+          </div>
+
+          <div class="gallery-block hidden-photo">
+            <div class="gallery-copy">
+              <h3>Parte del proceso</h3>
+              <p>Parte del proceso mostrando a ella trabajando durante la sesión.</p>
+            </div>
+            <div class="gallery-row">
+              <button class="gallery-thumb hidden-photo" type="button" data-full="https://iili.io/q5CHySj.png" aria-label="Abrir imagen proceso de tratamiento 1">
+                <img src="https://iili.io/q5CHySj.png" alt="Parte del proceso mostrando a ella trabajando 1" />
+              </button>
+              <button class="gallery-thumb hidden-photo" type="button" data-full="https://iili.io/q5CJHHx.png" aria-label="Abrir imagen proceso de tratamiento 2">
+                <img src="https://iili.io/q5CJHHx.png" alt="Parte del proceso mostrando a ella trabajando 2" />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-actions">
+          <button class="btn btn-primary" id="showMoreGallery" type="button">Mostrar más fotos</button>
+          <a
+            class="btn btn-secondary instagram-more"
+            id="instagramMoreBtn"
+            href="https://www.instagram.com/estetica.melgar/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Ver más en Instagram</a>
         </div>
       </div>
     </section>
@@ -1767,13 +1910,19 @@
           </div>
         </div>
 
-        <div class="map-card glass">
-          <iframe
-            loading="lazy"
-            allowfullscreen
-            referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps?q=Carlos%20Octavio%20Bunge%20930,%20B1684%20El%20Palomar,%20Provincia%20de%20Buenos%20Aires&output=embed">
-          </iframe>
+        <div class="map-stack">
+          <div class="map-card glass">
+            <iframe
+              loading="lazy"
+              allowfullscreen
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=Carlos%20Octavio%20Bunge%20930,%20B1684%20El%20Palomar,%20Provincia%20de%20Buenos%20Aires&output=embed">
+            </iframe>
+          </div>
+
+          <div class="map-photo glass">
+            <img src="https://iili.io/q5T6Rv2.jpg" alt="Referencia visual de ubicación Estética Melgar" />
+          </div>
         </div>
       </div>
     </section>
@@ -1822,6 +1971,13 @@
       aria-label="WhatsApp">
       <img src="https://iili.io/qBZhqGf.md.png" alt="WhatsApp" />
     </a>
+  </div>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Cerrar imagen">×</button>
+      <img class="lightbox-img" id="lightboxImg" src="" alt="" />
+    </div>
   </div>
 
   <script>
@@ -1925,6 +2081,58 @@
           answer.style.maxHeight = answer.scrollHeight + "px";
         }
       });
+    });
+
+    const showMoreGalleryBtn = document.getElementById("showMoreGallery");
+    const instagramMoreBtn = document.getElementById("instagramMoreBtn");
+    const hiddenPhotos = document.querySelectorAll(".hidden-photo");
+
+    showMoreGalleryBtn.addEventListener("click", () => {
+      hiddenPhotos.forEach(item => {
+        item.classList.remove("hidden-photo");
+      });
+
+      showMoreGalleryBtn.style.display = "none";
+      instagramMoreBtn.style.display = "inline-flex";
+    });
+
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightboxImg");
+    const lightboxClose = document.getElementById("lightboxClose");
+    const galleryThumbs = document.querySelectorAll(".gallery-thumb");
+
+    galleryThumbs.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const full = btn.getAttribute("data-full");
+        const img = btn.querySelector("img");
+        lightboxImg.src = full;
+        lightboxImg.alt = img ? img.alt : "Imagen ampliada";
+        lightbox.classList.add("open");
+        lightbox.setAttribute("aria-hidden", "false");
+        body.style.overflow = "hidden";
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove("open");
+      lightbox.setAttribute("aria-hidden", "true");
+      lightboxImg.src = "";
+      lightboxImg.alt = "";
+      body.style.overflow = "";
+    }
+
+    lightboxClose.addEventListener("click", closeLightbox);
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && lightbox.classList.contains("open")) {
+        closeLightbox();
+      }
     });
   </script>
 </body>
