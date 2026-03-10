@@ -641,9 +641,36 @@
       font-size:.92rem;
     }
 
+    .gallery-groups{
+      display:grid;
+      gap:22px;
+    }
+
+    .gallery-group{
+      border-radius:28px;
+      padding:22px;
+      overflow:hidden;
+    }
+
+    .gallery-group-head{
+      margin-bottom:16px;
+    }
+
+    .gallery-group-head h3{
+      color:var(--title);
+      font-size:1.25rem;
+      margin-bottom:6px;
+      line-height:1.1;
+    }
+
+    .gallery-group-head p{
+      color:var(--text-soft);
+      font-size:.96rem;
+    }
+
     .gallery-grid{
       display:grid;
-      grid-template-columns:repeat(3,1fr);
+      grid-template-columns:repeat(4,1fr);
       gap:16px;
     }
 
@@ -653,7 +680,7 @@
       box-shadow:var(--shadow);
       border:1px solid rgba(255,255,255,.3);
       background:var(--surface);
-      min-height:260px;
+      min-height:240px;
       display:flex;
       align-items:center;
       justify-content:center;
@@ -672,16 +699,6 @@
 
     .gallery-item:hover img{
       transform:scale(1.03);
-    }
-
-    .gallery-item.hidden-gallery{
-      display:none;
-    }
-
-    .gallery-actions{
-      display:flex;
-      justify-content:center;
-      margin-top:24px;
     }
 
     .video-grid{
@@ -1150,7 +1167,8 @@
       .about-card,
       .location-card,
       .cta-card,
-      .faq-intro{
+      .faq-intro,
+      .gallery-group{
         padding:24px 20px;
       }
 
@@ -1401,51 +1419,68 @@
             <span class="eyebrow">Galería</span>
             <h2>Trabajos y resultados</h2>
             <p class="lead">
-              Una selección de imágenes para mostrar parte del trabajo realizado, con foco en Plasma Pen, restauración y resultados cuidados.
+              Una selección organizada por servicio para que se entienda mejor a qué tratamiento corresponde cada imagen.
             </p>
           </div>
         </div>
 
-        <div class="gallery-grid">
-          <figure class="gallery-item">
-            <img src="https://iili.io/quZFYG4.png" alt="Trabajo realizado 1" />
-          </figure>
-          <figure class="gallery-item">
-            <img src="https://iili.io/quZFuun.png" alt="Trabajo realizado 2" />
-          </figure>
-          <figure class="gallery-item">
-            <img src="https://iili.io/quZFo3N.png" alt="Trabajo realizado 3" />
-          </figure>
-          <figure class="gallery-item">
-            <img src="https://iili.io/quZFBGR.png" alt="Trabajo realizado 4" />
-          </figure>
-          <figure class="gallery-item">
-            <img src="https://iili.io/q5J0aKQ.jpg" alt="Referencia Plasma Pen 1" />
-          </figure>
-          <figure class="gallery-item">
-            <img src="https://iili.io/q5J0clV.jpg" alt="Referencia Plasma Pen 2" />
-          </figure>
-          <figure class="gallery-item hidden-gallery extra-gallery">
-            <img src="https://iili.io/quZFecB.png" alt="Trabajo realizado 5" />
-          </figure>
-          <figure class="gallery-item hidden-gallery extra-gallery">
-            <img src="https://iili.io/q52Dk1t.png" alt="Estrías abdomen resultado 1" />
-          </figure>
-          <figure class="gallery-item hidden-gallery extra-gallery">
-            <img src="https://iili.io/q52D8l4.png" alt="Estrías abdomen resultado 2" />
-          </figure>
-          <figure class="gallery-item glass hidden-gallery extra-gallery" style="display:grid; place-items:center; padding:26px;">
-            <div style="text-align:center;">
-              <span class="eyebrow" style="margin-bottom:12px;">Atención con turno</span>
-              <h3 style="color:var(--title); font-size:1.35rem; margin-bottom:8px;">Consultas por WhatsApp</h3>
-              <p style="color:var(--text-soft); margin-bottom:18px;">Si querés consultar por Plasma Pen, blanqueamiento u otro tratamiento, podés escribir de forma directa.</p>
-              <a class="btn btn-primary" href="https://wa.me/5491126833154?text=Hola%20Est%C3%A9tica%20Melgar,%20quisiera%20consultar%20por%20un%20turno.">Escribir ahora</a>
+        <div class="gallery-groups">
+          <article class="gallery-group glass">
+            <div class="gallery-group-head">
+              <h3>Plasma Pen</h3>
+              <p>Evolución del tratamiento Plasma Pen.</p>
             </div>
-          </figure>
-        </div>
+            <div class="gallery-grid">
+              <figure class="gallery-item">
+                <img src="https://iili.io/q5J0aKQ.jpg" alt="Evolución del tratamiento Plasma Pen 1" />
+              </figure>
+              <figure class="gallery-item">
+                <img src="https://iili.io/q5J0clV.jpg" alt="Evolución del tratamiento Plasma Pen 2" />
+              </figure>
+            </div>
+          </article>
 
-        <div class="gallery-actions">
-          <button class="btn btn-primary" id="showMoreGallery" type="button">Ver más</button>
+          <article class="gallery-group glass">
+            <div class="gallery-group-head">
+              <h3>Camuflaje de estrías</h3>
+              <p>Evolución del tratamiento de camuflaje de estrías.</p>
+            </div>
+            <div class="gallery-grid">
+              <figure class="gallery-item">
+                <img src="https://iili.io/q5KHC2p.jpg" alt="Evolución del tratamiento de camuflaje de estrías 1" />
+              </figure>
+              <figure class="gallery-item">
+                <img src="https://iili.io/q5K0Gn9.jpg" alt="Evolución del tratamiento de camuflaje de estrías 2" />
+              </figure>
+              <figure class="gallery-item">
+                <img src="https://iili.io/q5KhnLl.jpg" alt="Evolución del tratamiento de camuflaje de estrías 3" />
+              </figure>
+              <figure class="gallery-item">
+                <img src="https://iili.io/q5KKyPe.jpg" alt="Evolución del tratamiento de camuflaje de estrías 4" />
+              </figure>
+            </div>
+          </article>
+
+          <article class="gallery-group glass">
+            <div class="gallery-group-head">
+              <h3>Blanqueamiento corporal</h3>
+              <p>Resultados y evolución del tratamiento de blanqueamiento corporal.</p>
+            </div>
+            <div class="gallery-grid">
+              <figure class="gallery-item">
+                <img src="https://iili.io/q5BrOq7.png" alt="Blanqueamiento corporal 1" />
+              </figure>
+              <figure class="gallery-item">
+                <img src="https://iili.io/q5Br8du.png" alt="Blanqueamiento corporal 2" />
+              </figure>
+              <figure class="gallery-item">
+                <img src="https://iili.io/q5CHySj.png" alt="Blanqueamiento corporal 3" />
+              </figure>
+              <figure class="gallery-item">
+                <img src="https://iili.io/q5CJHHx.png" alt="Blanqueamiento corporal 4" />
+              </figure>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -1869,20 +1904,6 @@
 
       showMoreReviewsBtn.style.display = "none";
       googleReviewsBtn.style.display = "inline-flex";
-    });
-
-    const showMoreGalleryBtn = document.getElementById("showMoreGallery");
-    const extraGallery = document.querySelectorAll(".extra-gallery");
-
-    showMoreGalleryBtn.addEventListener("click", () => {
-      extraGallery.forEach(item => {
-        item.classList.remove("hidden-gallery");
-        if (item.classList.contains("glass")) {
-          item.style.display = "grid";
-        }
-      });
-
-      showMoreGalleryBtn.style.display = "none";
     });
 
     const faqItems = document.querySelectorAll(".faq-item");
